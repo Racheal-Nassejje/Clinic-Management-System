@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClinicMS – Consultation</title>
+  <link rel="stylesheet" href="../CSS/general.css" />
+</head>
+<body class="app-page">
+
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <span class="sidebar-logo-icon">&#10084;</span>
+          <div class="sidebar-logo-text">
+            <span class="sidebar-brand">ClinicMS</span>
+            <span class="sidebar-brand-sub">World-class Hospital UI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-profile">
+        <div class="profile-avatar">&#128100;</div>
+        <div class="profile-info">
+          <span class="profile-name">System Administrator</span>
+          <span class="profile-role">Administrator</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">
+              <span class="nav-icon">&#9783;</span>
+              <span class="nav-label">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="registration.html" class="nav-link">
+              <span class="nav-icon">&#128203;</span>
+              <span class="nav-label">Registration</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="appointments.html" class="nav-link">
+              <span class="nav-icon">&#128197;</span>
+              <span class="nav-label">Appointments</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="triage.html" class="nav-link">
+              <span class="nav-icon">&#10084;</span>
+              <span class="nav-label">Triage</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a href="consultation.html" class="nav-link">
+              <span class="nav-icon">&#128138;</span>
+              <span class="nav-label">Consultation</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="admissions.html" class="nav-link">
+              <span class="nav-icon">&#127973;</span>
+              <span class="nav-label">Admissions</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="ward-patients.html" class="nav-link">
+              <span class="nav-icon">&#128137;</span>
+              <span class="nav-label">Ward Patients</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="reports.html" class="nav-link">
+              <span class="nav-icon">&#128202;</span>
+              <span class="nav-label">Reports</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="index.html" class="nav-link nav-link--logout">
+          <span class="nav-icon">&#8594;</span>
+          <span class="nav-label">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h2 class="topbar-title">Consultation</h2>
+          <p class="topbar-subtitle">Manage patient consultations and prescriptions</p>
+        </div>
+        <div class="topbar-right">
+          <a href="dashboard.html" class="topbar-btn">
+            &#9783; Dashboard
+          </a>
+          <a href="registration.html" class="topbar-btn">
+            &#43; New Patient
+          </a>
+          <div class="topbar-user">
+            &#128100; System Administrator &bull; Administrator
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Body -->
+      <main class="page-body">
+
+        <!-- Page Banner -->
+        <section class="page-banner">
+          <div class="banner-left">
+            <h3 class="banner-title">Consultation</h3>
+            <p class="banner-subtitle">
+              Record patient consultations, diagnoses and prescriptions.
+            </p>
+          </div>
+        </section>
+
+        <!-- Consultation Stats -->
+        <div class="stats-row">
+          <div class="stat-card stat-card--blue">
+            <span class="stat-icon">&#128138;</span>
+            <div class="stat-info">
+              <span class="stat-number" id="totalConsultations">0</span>
+              <span class="stat-label">Total Consultations</span>
+            </div>
+          </div>
+          <div class="stat-card stat-card--green">
+            <span class="stat-icon">&#9989;</span>
+            <div class="stat-info">
+              <span class="stat-number" id="completedConsultations">0</span>
+              <span class="stat-label">Completed</span>
+            </div>
+          </div>
+          <div class="stat-card stat-card--orange">
+            <span class="stat-icon">&#9203;</span>
+            <div class="stat-info">
+              <span class="stat-number" id="pendingConsultations">0</span>
+              <span class="stat-label">Pending</span>
+            </div>
+          </div>
+          <div class="stat-card stat-card--red">
+            <span class="stat-icon">&#128137;</span>
+            <div class="stat-info">
+              <span class="stat-number" id="referredConsultations">0</span>
+              <span class="stat-label">Referred</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consultation Form -->
+        <section class="form-card">
+          <div class="form-card-header">
+            <h4 class="form-card-title">New Consultation</h4>
+          </div>
+
+          <form id="consultationForm" class="registration-form">
+            <div class="form-grid-3">
+
+              <!-- Column 1 -->
+              <div class="form-column">
+
+                <div class="form-group">
+                  <label class="form-label" for="consultPatientName">Patient Name</label>
+                  <input
+                    type="text"
+                    id="consultPatientName"
+                    name="consultPatientName"
+                    class="form-input"
+                    placeholder="Full patient name"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="consultAge">Age</label>
+                  <input
+                    type="number"
+                    id="consultAge"
+                    name="consultAge"
+                    class="form-input"
+                    placeholder="Age"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="consultGender">Gender</label>
+                  <select id="consultGender" name="consultGender" class="form-select">
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="consultDoctor">Doctor</label>
+                  <input
+                    type="text"
+                    id="consultDoctor"
+                    name="consultDoctor"
+                    class="form-input"
+                    placeholder="Consulting doctor"
+                  />
+                </div>
+
+              </div>
+
+              <!-- Column 2 -->
+              <div class="form-column">
+
+                <div class="form-group">
+                  <label class="form-label" for="consultComplaint">Chief Complaint</label>
+                  <input
+                    type="text"
+                    id="consultComplaint"
+                    name="consultComplaint"
+                    class="form-input"
+                    placeholder="Main complaint"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="consultDiagnosis">Diagnosis</label>
+                  <input
+                    type="text"
+                    id="consultDiagnosis"
+                    name="consultDiagnosis"
+                    class="form-input"
+                    placeholder="Doctor's diagnosis"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="consultPrescription">Prescription</label>
+                  <textarea
+                    id="consultPrescription"
+                    name="consultPrescription"
+                    class="form-input form-textarea"
+                    placeholder="Prescribed medication..."
+                    rows="3"
+                  ></textarea>
+                </div>
+
+              </div>
+
+              <!-- Column 3 -->
+              <div class="form-column">
+
+                <div class="form-group">
+                  <label class="form-label" for="consultDate">Consultation Date</label>
+                  <input
+                    type="date"
+                    id="consultDate"
+                    name="consultDate"
+                    class="form-input"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="consultStatus">Status</label>
+                  <select id="consultStatus" name="consultStatus" class="form-select">
+                    <option value="Completed">Completed</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Referred">Referred</option>
+                    <option value="Follow-up">Follow-up</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="consultNotes">Additional Notes</label>
+                  <textarea
+                    id="consultNotes"
+                    name="consultNotes"
+                    class="form-input form-textarea"
+                    placeholder="Any extra notes..."
+                    rows="3"
+                  ></textarea>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Form Actions -->
+            <div class="form-actions">
+              <button type="reset" class="btn btn--secondary">
+                &#10006; Clear
+              </button>
+              <button type="submit" class="btn btn--primary">
+                &#128138; Save Consultation
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Consultations Table -->
+        <section class="table-card">
+          <div class="table-card-header">
+            <h4 class="table-card-title">Consultation Records</h4>
+            <input
+              type="text"
+              id="searchConsultation"
+              class="table-search"
+              placeholder="&#128269; Search..."
+            />
+          </div>
+
+          <div class="table-wrapper">
+            <table class="data-table" id="consultationTable">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Patient Name</th>
+                  <th>Age</th>
+                  <th>Gender</th>
+                  <th>Complaint</th>
+                  <th>Diagnosis</th>
+                  <th>Doctor</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="consultationTableBody">
+                <tr class="table-empty-row">
+                  <td colspan="10">No consultations recorded yet.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/consultation.js"></script>
+</body>
+</html>

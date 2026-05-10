@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClinicMS – Reports</title>
+  <link rel="stylesheet" href="../CSS/general.css" />
+  <!-- Chart.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="app-page">
+
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <span class="sidebar-logo-icon">&#10084;</span>
+          <div class="sidebar-logo-text">
+            <span class="sidebar-brand">ClinicMS</span>
+            <span class="sidebar-brand-sub">World-class Hospital UI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-profile">
+        <div class="profile-avatar">&#128100;</div>
+        <div class="profile-info">
+          <span class="profile-name">System Administrator</span>
+          <span class="profile-role">Administrator</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">
+              <span class="nav-icon">&#9783;</span>
+              <span class="nav-label">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="registration.html" class="nav-link">
+              <span class="nav-icon">&#128203;</span>
+              <span class="nav-label">Registration</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="appointments.html" class="nav-link">
+              <span class="nav-icon">&#128197;</span>
+              <span class="nav-label">Appointments</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="triage.html" class="nav-link">
+              <span class="nav-icon">&#10084;</span>
+              <span class="nav-label">Triage</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="consultation.html" class="nav-link">
+              <span class="nav-icon">&#128138;</span>
+              <span class="nav-label">Consultation</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="admissions.html" class="nav-link">
+              <span class="nav-icon">&#127973;</span>
+              <span class="nav-label">Admissions</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="ward-patients.html" class="nav-link">
+              <span class="nav-icon">&#128137;</span>
+              <span class="nav-label">Ward Patients</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a href="reports.html" class="nav-link">
+              <span class="nav-icon">&#128202;</span>
+              <span class="nav-label">Reports</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="index.html" class="nav-link nav-link--logout">
+          <span class="nav-icon">&#8594;</span>
+          <span class="nav-label">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h2 class="topbar-title">Reports & Analytics</h2>
+          <p class="topbar-subtitle">Monthly data visualizations and clinic statistics</p>
+        </div>
+        <div class="topbar-right">
+          <a href="dashboard.html" class="topbar-btn">
+            &#9783; Dashboard
+          </a>
+          <a href="registration.html" class="topbar-btn">
+            &#43; New Patient
+          </a>
+          <div class="topbar-user">
+            &#128100; System Administrator &bull; Administrator
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Body -->
+      <main class="page-body">
+
+        <!-- Page Banner -->
+        <section class="page-banner">
+          <div class="banner-left">
+            <h3 class="banner-title">Reports & Analytics</h3>
+            <p class="banner-subtitle">
+              Visual monthly data to support clinic decision making.
+            </p>
+          </div>
+          <!-- Year Filter -->
+          <div class="banner-badges">
+            <select id="yearFilter" class="form-select" style="width:auto;">
+              <option value="2026">2026</option>
+              <option value="2025">2025</option>
+            </select>
+          </div>
+        </section>
+
+        <!-- Summary Stats Row -->
+        <div class="stats-row">
+          <div class="stat-card stat-card--blue">
+            <span class="stat-icon">&#128100;</span>
+            <div class="stat-info">
+              <span class="stat-number">1,284</span>
+              <span class="stat-label">Total Patients</span>
+            </div>
+          </div>
+          <div class="stat-card stat-card--green">
+            <span class="stat-icon">&#128197;</span>
+            <div class="stat-info">
+              <span class="stat-number">946</span>
+              <span class="stat-label">Appointments</span>
+            </div>
+          </div>
+          <div class="stat-card stat-card--orange">
+            <span class="stat-icon">&#127973;</span>
+            <div class="stat-info">
+              <span class="stat-number">312</span>
+              <span class="stat-label">Admissions</span>
+            </div>
+          </div>
+          <div class="stat-card stat-card--red">
+            <span class="stat-icon">&#10084;</span>
+            <div class="stat-info">
+              <span class="stat-number">278</span>
+              <span class="stat-label">Triage Cases</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Row 1: Bar + Line -->
+        <div class="charts-row">
+
+          <!-- Monthly Patients Bar Chart -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h4 class="chart-title">Monthly Patient Registrations</h4>
+              <span class="chart-badge">2026</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="monthlyPatientsChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Appointments Line Chart -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h4 class="chart-title">Monthly Appointments</h4>
+              <span class="chart-badge">2026</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="monthlyAppointmentsChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Charts Row 2: Doughnut + Bar -->
+        <div class="charts-row">
+
+          <!-- Patient Type Doughnut Chart -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h4 class="chart-title">Patient Types Distribution</h4>
+              <span class="chart-badge">All Time</span>
+            </div>
+            <div class="chart-wrapper chart-wrapper--small">
+              <canvas id="patientTypeChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Triage Priority Bar Chart -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h4 class="chart-title">Triage Priority Levels</h4>
+              <span class="chart-badge">2026</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="triagePriorityChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Charts Row 3: Admissions by Ward -->
+        <div class="charts-row">
+
+          <!-- Admissions by Ward Bar Chart -->
+          <div class="chart-card chart-card--full">
+            <div class="chart-card-header">
+              <h4 class="chart-title">Admissions by Ward</h4>
+              <span class="chart-badge">2026</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="admissionsByWardChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/reports.js"></script>
+</body>
+</html>
