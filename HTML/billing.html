@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ClinicMS – Consultation</title>
+  <title>ClinicMS – Billing</title>
   <link rel="stylesheet" href="../CSS/general.css" />
 </head>
 <body class="app-page">
@@ -56,7 +56,7 @@
               <span class="nav-label">Triage</span>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a href="../HTML/consultation.html" class="nav-link">
               <span class="nav-icon">&#128138;</span>
               <span class="nav-label">Consultation</span>
@@ -75,17 +75,17 @@
             </a>
           </li>
           <li class="nav-item">
-  <a href="../HTML/diagnosis.html" class="nav-link">
-    <span class="nav-icon">&#128300;</span>
-    <span class="nav-label">Diagnosis</span>
-  </a>
-</li>
-<li class="nav-item">
-  <a href="../HTML/billing.html" class="nav-link">
-    <span class="nav-icon">&#128181;</span>
-    <span class="nav-label">Billing</span>
-  </a>
-</li>
+            <a href="../HTML/diagnosis.html" class="nav-link">
+              <span class="nav-icon">&#128300;</span>
+              <span class="nav-label">Diagnosis</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a href="../HTML/billing.html" class="nav-link">
+              <span class="nav-icon">&#128181;</span>
+              <span class="nav-label">Billing</span>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="../HTML/reports.html" class="nav-link">
               <span class="nav-icon">&#128202;</span>
@@ -109,8 +109,8 @@
       <!-- Top Bar -->
       <header class="topbar">
         <div class="topbar-left">
-          <h2 class="topbar-title">Consultation</h2>
-          <p class="topbar-subtitle">Manage patient consultations and prescriptions</p>
+          <h2 class="topbar-title">Billing</h2>
+          <p class="topbar-subtitle">Manage patient charges and payments</p>
         </div>
         <div class="topbar-right">
           <a href="../HTML/diagnosis.html" class="topbar-btn">
@@ -131,63 +131,63 @@
         <!-- Page Banner -->
         <section class="page-banner">
           <div class="banner-left">
-            <h3 class="banner-title">Consultation</h3>
+            <h3 class="banner-title">Billing & Payments</h3>
             <p class="banner-subtitle">
-              Record patient consultations, diagnoses and prescriptions.
+              Record patient charges, track payments and monitor clinic income.
             </p>
           </div>
         </section>
 
-        <!-- Consultation Stats -->
+        <!-- Billing Stats -->
         <div class="stats-row">
-          <div class="stat-card stat-card--blue">
-            <span class="stat-icon">&#128138;</span>
+          <div class="stat-card stat-card--green">
+            <span class="stat-icon">&#128176;</span>
             <div class="stat-info">
-              <span class="stat-number" id="totalConsultations">0</span>
-              <span class="stat-label">Total Consultations</span>
+              <span class="stat-number" id="totalIncome">UGX 0</span>
+              <span class="stat-label">Total Income</span>
             </div>
           </div>
-          <div class="stat-card stat-card--green">
+          <div class="stat-card stat-card--blue">
             <span class="stat-icon">&#9989;</span>
             <div class="stat-info">
-              <span class="stat-number" id="completedConsultations">0</span>
-              <span class="stat-label">Completed</span>
+              <span class="stat-number" id="totalPaid">0</span>
+              <span class="stat-label">Paid Bills</span>
             </div>
           </div>
           <div class="stat-card stat-card--orange">
             <span class="stat-icon">&#9203;</span>
             <div class="stat-info">
-              <span class="stat-number" id="pendingConsultations">0</span>
-              <span class="stat-label">Pending</span>
+              <span class="stat-number" id="totalPending">0</span>
+              <span class="stat-label">Pending Bills</span>
             </div>
           </div>
           <div class="stat-card stat-card--red">
-            <span class="stat-icon">&#128137;</span>
+            <span class="stat-icon">&#128183;</span>
             <div class="stat-info">
-              <span class="stat-number" id="referredConsultations">0</span>
-              <span class="stat-label">Referred</span>
+              <span class="stat-number" id="totalExpenses">UGX 0</span>
+              <span class="stat-label">Total Expenses</span>
             </div>
           </div>
         </div>
 
-        <!-- Consultation Form -->
+        <!-- Billing Form -->
         <section class="form-card">
           <div class="form-card-header">
-            <h4 class="form-card-title">New Consultation</h4>
+            <h4 class="form-card-title">Add New Bill</h4>
           </div>
 
-          <form id="consultationForm" class="registration-form">
+          <form id="billingForm" class="registration-form">
             <div class="form-grid-3">
 
               <!-- Column 1 -->
               <div class="form-column">
 
                 <div class="form-group">
-                  <label class="form-label" for="consultPatientName">Patient Name</label>
+                  <label class="form-label" for="billPatientName">Patient Name</label>
                   <input
                     type="text"
-                    id="consultPatientName"
-                    name="consultPatientName"
+                    id="billPatientName"
+                    name="billPatientName"
                     class="form-input"
                     placeholder="Full patient name"
                     required
@@ -195,33 +195,24 @@
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label" for="consultAge">Age</label>
+                  <label class="form-label" for="billPhone">Phone Number</label>
                   <input
-                    type="number"
-                    id="consultAge"
-                    name="consultAge"
+                    type="tel"
+                    id="billPhone"
+                    name="billPhone"
                     class="form-input"
-                    placeholder="Age"
+                    placeholder="Patient phone"
                   />
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label" for="consultGender">Gender</label>
-                  <select id="consultGender" name="consultGender" class="form-select">
-                    <option value="">Select</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="consultDoctor">Doctor</label>
+                  <label class="form-label" for="billDate">Bill Date</label>
                   <input
-                    type="text"
-                    id="consultDoctor"
-                    name="consultDoctor"
+                    type="date"
+                    id="billDate"
+                    name="billDate"
                     class="form-input"
-                    placeholder="Consulting doctor"
+                    required
                   />
                 </div>
 
@@ -231,37 +222,42 @@
               <div class="form-column">
 
                 <div class="form-group">
-                  <label class="form-label" for="consultComplaint">Chief Complaint</label>
+                  <label class="form-label" for="billService">Service Rendered</label>
+                  <select id="billService" name="billService" class="form-select" required>
+                    <option value="">Select Service</option>
+                    <option value="Consultation">Consultation</option>
+                    <option value="Registration">Registration Fee</option>
+                    <option value="Triage">Triage Assessment</option>
+                    <option value="Admission">Admission Fee</option>
+                    <option value="Ward">Ward Charges</option>
+                    <option value="Diagnosis">Diagnosis / Lab Test</option>
+                    <option value="Medication">Medication</option>
+                    <option value="Surgery">Surgery</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="billAmount">Amount (UGX)</label>
                   <input
-                    type="text"
-                    id="consultComplaint"
-                    name="consultComplaint"
+                    type="number"
+                    id="billAmount"
+                    name="billAmount"
                     class="form-input"
-                    placeholder="Main complaint"
+                    placeholder="e.g. 50000"
+                    min="0"
                     required
                   />
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label" for="consultDiagnosis">Diagnosis</label>
-                  <input
-                    type="text"
-                    id="consultDiagnosis"
-                    name="consultDiagnosis"
-                    class="form-input"
-                    placeholder="Doctor's diagnosis"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="consultPrescription">Prescription</label>
-                  <textarea
-                    id="consultPrescription"
-                    name="consultPrescription"
-                    class="form-input form-textarea"
-                    placeholder="Prescribed medication..."
-                    rows="3"
-                  ></textarea>
+                  <label class="form-label" for="billPaymentMethod">Payment Method</label>
+                  <select id="billPaymentMethod" name="billPaymentMethod" class="form-select">
+                    <option value="Cash">Cash</option>
+                    <option value="Mobile Money">Mobile Money</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                  </select>
                 </div>
 
               </div>
@@ -270,34 +266,30 @@
               <div class="form-column">
 
                 <div class="form-group">
-                  <label class="form-label" for="consultDate">Consultation Date</label>
-                  <input
-                    type="date"
-                    id="consultDate"
-                    name="consultDate"
-                    class="form-input"
-                    required
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="consultStatus">Status</label>
-                  <select id="consultStatus" name="consultStatus" class="form-select">
-                    <option value="Completed">Completed</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Referred">Referred</option>
-                    <option value="Follow-up">Follow-up</option>
+                  <label class="form-label" for="billType">Bill Type</label>
+                  <select id="billType" name="billType" class="form-select">
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
                   </select>
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label" for="consultNotes">Additional Notes</label>
+                  <label class="form-label" for="billStatus">Payment Status</label>
+                  <select id="billStatus" name="billStatus" class="form-select">
+                    <option value="Paid">Paid</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Waived">Waived</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="billNotes">Notes</label>
                   <textarea
-                    id="consultNotes"
-                    name="consultNotes"
+                    id="billNotes"
+                    name="billNotes"
                     class="form-input form-textarea"
-                    placeholder="Any extra notes..."
-                    rows="3"
+                    placeholder="Additional notes..."
+                    rows="2"
                   ></textarea>
                 </div>
 
@@ -311,43 +303,43 @@
                 &#10006; Clear
               </button>
               <button type="submit" class="btn btn--primary">
-                &#128138; Save Consultation
+                &#128181; Save Bill
               </button>
             </div>
           </form>
         </section>
 
-        <!-- Consultations Table -->
+        <!-- Billing Table -->
         <section class="table-card">
           <div class="table-card-header">
-            <h4 class="table-card-title">Consultation Records</h4>
+            <h4 class="table-card-title">All Bills</h4>
             <input
               type="text"
-              id="searchConsultation"
+              id="searchBill"
               class="table-search"
               placeholder="&#128269; Search..."
             />
           </div>
 
           <div class="table-wrapper">
-            <table class="data-table" id="consultationTable">
+            <table class="data-table" id="billingTable">
               <thead>
                 <tr>
                   <th>#</th>
                   <th>Patient Name</th>
-                  <th>Age</th>
-                  <th>Gender</th>
-                  <th>Complaint</th>
-                  <th>Diagnosis</th>
-                  <th>Doctor</th>
+                  <th>Phone</th>
+                  <th>Service</th>
+                  <th>Amount (UGX)</th>
+                  <th>Type</th>
+                  <th>Payment Method</th>
                   <th>Date</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody id="consultationTableBody">
+              <tbody id="billingTableBody">
                 <tr class="table-empty-row">
-                  <td colspan="10">No consultations recorded yet.</td>
+                  <td colspan="10">No bills recorded yet.</td>
                 </tr>
               </tbody>
             </table>
@@ -360,6 +352,6 @@
   </div>
 
   <script src="../JAVASCRIPT/main.js"></script>
-  <script src="../JAVASCRIPT/consultaion.js"></script>
+  <script src="../JAVASCRIPT/billing.js></script>
 </body>
 </html>

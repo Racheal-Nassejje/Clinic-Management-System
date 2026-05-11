@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ClinicMS – Consultation</title>
+  <title>ClinicMS – Admissions</title>
   <link rel="stylesheet" href="../CSS/general.css" />
 </head>
 <body class="app-page">
@@ -56,13 +56,13 @@
               <span class="nav-label">Triage</span>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a href="../HTML/consultation.html" class="nav-link">
               <span class="nav-icon">&#128138;</span>
               <span class="nav-label">Consultation</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a href="../HTML/admissions.html" class="nav-link">
               <span class="nav-icon">&#127973;</span>
               <span class="nav-label">Admissions</span>
@@ -109,11 +109,11 @@
       <!-- Top Bar -->
       <header class="topbar">
         <div class="topbar-left">
-          <h2 class="topbar-title">Consultation</h2>
-          <p class="topbar-subtitle">Manage patient consultations and prescriptions</p>
+          <h2 class="topbar-title">Admissions</h2>
+          <p class="topbar-subtitle">Manage patient admissions and bed assignments</p>
         </div>
         <div class="topbar-right">
-          <a href="../HTML/diagnosis.html" class="topbar-btn">
+          <a href="../HTML/dashboard.html" class="topbar-btn">
             &#9783; Dashboard
           </a>
           <a href="../HTML/registration.html" class="topbar-btn">
@@ -131,63 +131,63 @@
         <!-- Page Banner -->
         <section class="page-banner">
           <div class="banner-left">
-            <h3 class="banner-title">Consultation</h3>
+            <h3 class="banner-title">Admissions</h3>
             <p class="banner-subtitle">
-              Record patient consultations, diagnoses and prescriptions.
+              Admit patients and assign them to wards and beds.
             </p>
           </div>
         </section>
 
-        <!-- Consultation Stats -->
+        <!-- Admissions Stats Row -->
         <div class="stats-row">
           <div class="stat-card stat-card--blue">
-            <span class="stat-icon">&#128138;</span>
+            <span class="stat-icon">&#127973;</span>
             <div class="stat-info">
-              <span class="stat-number" id="totalConsultations">0</span>
-              <span class="stat-label">Total Consultations</span>
+              <span class="stat-number" id="totalAdmitted">0</span>
+              <span class="stat-label">Total Admitted</span>
             </div>
           </div>
           <div class="stat-card stat-card--green">
-            <span class="stat-icon">&#9989;</span>
+            <span class="stat-icon">&#128137;</span>
             <div class="stat-info">
-              <span class="stat-number" id="completedConsultations">0</span>
-              <span class="stat-label">Completed</span>
+              <span class="stat-number" id="bedsAvailable">20</span>
+              <span class="stat-label">Beds Available</span>
             </div>
           </div>
           <div class="stat-card stat-card--orange">
-            <span class="stat-icon">&#9203;</span>
+            <span class="stat-icon">&#128203;</span>
             <div class="stat-info">
-              <span class="stat-number" id="pendingConsultations">0</span>
+              <span class="stat-number" id="pendingAdmissions">0</span>
               <span class="stat-label">Pending</span>
             </div>
           </div>
           <div class="stat-card stat-card--red">
-            <span class="stat-icon">&#128137;</span>
+            <span class="stat-icon">&#10006;</span>
             <div class="stat-info">
-              <span class="stat-number" id="referredConsultations">0</span>
-              <span class="stat-label">Referred</span>
+              <span class="stat-number" id="dischargedToday">0</span>
+              <span class="stat-label">Discharged Today</span>
             </div>
           </div>
         </div>
 
-        <!-- Consultation Form -->
+        <!-- Admission Form Card -->
         <section class="form-card">
           <div class="form-card-header">
-            <h4 class="form-card-title">New Consultation</h4>
+            <h4 class="form-card-title">Admit New Patient</h4>
           </div>
 
-          <form id="consultationForm" class="registration-form">
+          <form id="admissionForm" class="registration-form">
             <div class="form-grid-3">
 
               <!-- Column 1 -->
               <div class="form-column">
 
                 <div class="form-group">
-                  <label class="form-label" for="consultPatientName">Patient Name</label>
+                  <label class="form-label" for="admitPatientName">Patient Name</label>
                   <input
                     type="text"
-                    id="consultPatientName"
-                    name="consultPatientName"
+                    id="admitPatientName"
+                    name="admitPatientName"
                     class="form-input"
                     placeholder="Full patient name"
                     required
@@ -195,34 +195,23 @@
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label" for="consultAge">Age</label>
+                  <label class="form-label" for="admitAge">Age</label>
                   <input
                     type="number"
-                    id="consultAge"
-                    name="consultAge"
+                    id="admitAge"
+                    name="admitAge"
                     class="form-input"
-                    placeholder="Age"
+                    placeholder="Patient age"
                   />
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label" for="consultGender">Gender</label>
-                  <select id="consultGender" name="consultGender" class="form-select">
+                  <label class="form-label" for="admitGender">Gender</label>
+                  <select id="admitGender" name="admitGender" class="form-select">
                     <option value="">Select</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                   </select>
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="consultDoctor">Doctor</label>
-                  <input
-                    type="text"
-                    id="consultDoctor"
-                    name="consultDoctor"
-                    class="form-input"
-                    placeholder="Consulting doctor"
-                  />
                 </div>
 
               </div>
@@ -231,37 +220,40 @@
               <div class="form-column">
 
                 <div class="form-group">
-                  <label class="form-label" for="consultComplaint">Chief Complaint</label>
+                  <label class="form-label" for="admitWard">Ward</label>
+                  <select id="admitWard" name="admitWard" class="form-select" required>
+                    <option value="">Select Ward</option>
+                    <option value="General Ward">General Ward</option>
+                    <option value="Male Ward">Male Ward</option>
+                    <option value="Female Ward">Female Ward</option>
+                    <option value="Pediatric Ward">Pediatric Ward</option>
+                    <option value="Maternity Ward">Maternity Ward</option>
+                    <option value="ICU">ICU</option>
+                    <option value="Surgical Ward">Surgical Ward</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="admitBedNumber">Bed Number</label>
                   <input
                     type="text"
-                    id="consultComplaint"
-                    name="consultComplaint"
+                    id="admitBedNumber"
+                    name="admitBedNumber"
                     class="form-input"
-                    placeholder="Main complaint"
+                    placeholder="e.g. B-12"
                     required
                   />
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label" for="consultDiagnosis">Diagnosis</label>
+                  <label class="form-label" for="admitDoctor">Admitting Doctor</label>
                   <input
                     type="text"
-                    id="consultDiagnosis"
-                    name="consultDiagnosis"
+                    id="admitDoctor"
+                    name="admitDoctor"
                     class="form-input"
-                    placeholder="Doctor's diagnosis"
+                    placeholder="Doctor name"
                   />
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="consultPrescription">Prescription</label>
-                  <textarea
-                    id="consultPrescription"
-                    name="consultPrescription"
-                    class="form-input form-textarea"
-                    placeholder="Prescribed medication..."
-                    rows="3"
-                  ></textarea>
                 </div>
 
               </div>
@@ -270,34 +262,35 @@
               <div class="form-column">
 
                 <div class="form-group">
-                  <label class="form-label" for="consultDate">Consultation Date</label>
+                  <label class="form-label" for="admitDate">Admission Date</label>
                   <input
                     type="date"
-                    id="consultDate"
-                    name="consultDate"
+                    id="admitDate"
+                    name="admitDate"
                     class="form-input"
                     required
                   />
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label" for="consultStatus">Status</label>
-                  <select id="consultStatus" name="consultStatus" class="form-select">
-                    <option value="Completed">Completed</option>
-                    <option value="Pending">Pending</option>
-                    <option value="Referred">Referred</option>
-                    <option value="Follow-up">Follow-up</option>
-                  </select>
+                  <label class="form-label" for="admitDiagnosis">Diagnosis</label>
+                  <input
+                    type="text"
+                    id="admitDiagnosis"
+                    name="admitDiagnosis"
+                    class="form-input"
+                    placeholder="Primary diagnosis"
+                  />
                 </div>
 
                 <div class="form-group">
-                  <label class="form-label" for="consultNotes">Additional Notes</label>
+                  <label class="form-label" for="admitNotes">Notes</label>
                   <textarea
-                    id="consultNotes"
-                    name="consultNotes"
+                    id="admitNotes"
+                    name="admitNotes"
                     class="form-input form-textarea"
-                    placeholder="Any extra notes..."
-                    rows="3"
+                    placeholder="Additional notes..."
+                    rows="2"
                   ></textarea>
                 </div>
 
@@ -311,43 +304,44 @@
                 &#10006; Clear
               </button>
               <button type="submit" class="btn btn--primary">
-                &#128138; Save Consultation
+                &#127973; Admit Patient
               </button>
             </div>
           </form>
         </section>
 
-        <!-- Consultations Table -->
+        <!-- Admissions Table -->
         <section class="table-card">
           <div class="table-card-header">
-            <h4 class="table-card-title">Consultation Records</h4>
+            <h4 class="table-card-title">Current Admissions</h4>
             <input
               type="text"
-              id="searchConsultation"
+              id="searchAdmission"
               class="table-search"
-              placeholder="&#128269; Search..."
+              placeholder="&#128269; Search patient..."
             />
           </div>
 
           <div class="table-wrapper">
-            <table class="data-table" id="consultationTable">
+            <table class="data-table" id="admissionsTable">
               <thead>
                 <tr>
                   <th>#</th>
                   <th>Patient Name</th>
                   <th>Age</th>
                   <th>Gender</th>
-                  <th>Complaint</th>
-                  <th>Diagnosis</th>
+                  <th>Ward</th>
+                  <th>Bed No.</th>
                   <th>Doctor</th>
-                  <th>Date</th>
+                  <th>Diagnosis</th>
+                  <th>Admit Date</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody id="consultationTableBody">
+              <tbody id="admissionsTableBody">
                 <tr class="table-empty-row">
-                  <td colspan="10">No consultations recorded yet.</td>
+                  <td colspan="11">No admissions recorded yet.</td>
                 </tr>
               </tbody>
             </table>
@@ -360,6 +354,6 @@
   </div>
 
   <script src="../JAVASCRIPT/main.js"></script>
-  <script src="../JAVASCRIPT/consultaion.js"></script>
+  <script src="../JAVASCRIPT/admissions.js"></script>
 </body>
 </html>

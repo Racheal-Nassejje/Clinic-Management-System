@@ -153,6 +153,7 @@ img {
   align-items: center;
   justify-content: center;
   padding: 2.5rem 1.8rem;
+  min-height: calc(100vh - 72px);
 }
 
 .brand-content {
