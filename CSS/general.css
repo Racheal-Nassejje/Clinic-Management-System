@@ -1,10 +1,7 @@
-/* ═══════════════════════════════════════════════
-   CLINICMS - STYLESHEET
-   Author: Nassejje Racheal | 237-415
-   Cavendish University Uganda 2026
-════════════════════════════════════════════════ */
+/* Nassejje Racheal | 237-415
+   Front-End Project  */
 
-/* ─── CSS VARIABLES ─────────────────────────── */
+/*  CSS VARIABLES  */
 :root {
   --sidebar-bg:       #1a3c5e;
   --sidebar-text:     #ffffff;
@@ -43,7 +40,7 @@
   --transition:       all 0.25s ease;
 }
 
-/* ─── RESET ──────────────────────────────────── */
+/*  RESET  */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -81,7 +78,7 @@ img {
   display: block;
 }
 
-/* ─── SCROLLBAR ───────────────────────────────── */
+/*  SCROLLBAR  */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -93,9 +90,7 @@ img {
   border-radius: 10px;
 }
 
-/* ════════════════════════════════════════════════
-   LOGIN PAGE
-════════════════════════════════════════════════ */
+/* LOGIN PAGE */
 .login-page {
   display: flex;
   flex-direction: column;
@@ -103,7 +98,7 @@ img {
   background: var(--main-bg);
 }
 
-/* ── Full Width Header ── */
+/* Width Header  */
 .login-header {
   width: 100%;
   background: linear-gradient(90deg, #0f2744 0%, #2e86de 100%);
@@ -138,13 +133,13 @@ img {
   margin-top: 0.2rem;
 }
 
-/* ── Wrapper below header ── */
+/*  Wrapper below header  */
 .login-wrapper {
   display: flex;
   flex: 1;
 }
 
-/* ── Left Panel ── */
+/*  Left Panel  */
 .login-brand-panel {
   width: 300px;
   flex-shrink: 0;
@@ -186,7 +181,7 @@ img {
   color: #2e86de;
 }
 
-/* ── Right Panel ── */
+/*  Right Panel  */
 .login-form-panel {
   flex: 1;
   display: flex;
@@ -434,9 +429,7 @@ img {
   color: var(--text-light);
   margin-top: 2rem;
 }
-/* ════════════════════════════════════════════════
-   APP LAYOUT (All pages except login)
-════════════════════════════════════════════════ */
+/* APP LAYOUT (All pages except login) */
 .app-layout {
   display: flex;
   min-height: 100vh;
@@ -451,9 +444,7 @@ img {
   background: var(--main-bg);
 }
 
-/* ════════════════════════════════════════════════
-   SIDEBAR
-════════════════════════════════════════════════ */
+/* SIDEBAR */
 .sidebar {
   width: var(--sidebar-width);
   background: var(--sidebar-bg);
@@ -608,9 +599,7 @@ img {
   color: #ff6b6b;
 }
 
-/* ════════════════════════════════════════════════
-   TOPBAR
-════════════════════════════════════════════════ */
+/* TOPBAR */
 .topbar {
   display: flex;
   align-items: center;
@@ -690,9 +679,7 @@ img {
   border: 1.5px solid var(--border);
 }
 
-/* ════════════════════════════════════════════════
-   PAGE BODY
-════════════════════════════════════════════════ */
+/* PAGE BODY */
 .page-body {
   padding: 1.5rem;
   flex: 1;
@@ -701,9 +688,7 @@ img {
   gap: 1.5rem;
 }
 
-/* ════════════════════════════════════════════════
-   PAGE BANNER
-════════════════════════════════════════════════ */
+/* PAGE BANNER */
 .page-banner,
 .dashboard-banner {
   background: linear-gradient(135deg, var(--sidebar-bg) 0%, var(--accent) 100%);
@@ -773,9 +758,7 @@ img {
   color: #ffffff;
   border: 1px solid rgba(255,255,255,0.2);
 }
-/* ════════════════════════════════════════════════
-   DASHBOARD MODULES
-════════════════════════════════════════════════ */
+/* DASHBOARD MODULE */
 .modules-section {
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -862,9 +845,7 @@ img {
   text-align: center;
 }
 
-/* ════════════════════════════════════════════════
-   STATS ROW
-════════════════════════════════════════════════ */
+/* STATS ROW */
 .stats-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -916,9 +897,7 @@ img {
   margin-top: 0.2rem;
 }
 
-/* ════════════════════════════════════════════════
-   FORM CARD
-════════════════════════════════════════════════ */
+/* FORM CARD */
 .form-card {
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -971,9 +950,7 @@ img {
   border-top: 1px solid var(--border);
 }
 
-/* ════════════════════════════════════════════════
-   TABLE CARD
-════════════════════════════════════════════════ */
+/* TABLE CARD */
 .table-card {
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -1102,9 +1079,7 @@ img {
   color: #ffffff;
 }
 
-/* ════════════════════════════════════════════════
-   WARD TABS
-════════════════════════════════════════════════ */
+/* WARD TABS */
 .ward-tabs {
   display: flex;
   gap: 0.5rem;
@@ -1134,9 +1109,7 @@ img {
   border-color: var(--accent);
 }
 
-/* ════════════════════════════════════════════════
-   REPORTS - CHARTS
-════════════════════════════════════════════════ */
+/* REPORTS - CHARTS */
 .charts-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1188,9 +1161,7 @@ img {
   height: 260px;
 }
 
-/* ════════════════════════════════════════════════
-   RESPONSIVE DESIGN
-════════════════════════════════════════════════ */
+/* RESPONSIVE DESIGN */
 
 /* Tablet */
 @media (max-width: 1024px) {
