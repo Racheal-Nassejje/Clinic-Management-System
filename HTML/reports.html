@@ -209,14 +209,14 @@
         <!-- Charts Row 2: Doughnut + Bar -->
         <div class="charts-row">
 
-          <!-- Patient Type Doughnut Chart -->
+          <!-- Income and Expenses  -->
           <div class="chart-card">
             <div class="chart-card-header">
-              <h4 class="chart-title">Patient Types Distribution</h4>
-              <span class="chart-badge">All Time</span>
+              <h4 class="chart-title">Income vs Expenses</h4>
+              <span class="chart-badge">2026</span>
             </div>
             <div class="chart-wrapper chart-wrapper--small">
-              <canvas id="patientTypeChart"></canvas>
+              <canvas id="incomeExpensesChart"></canvas>
             </div>
           </div>
 
@@ -248,7 +248,159 @@
           </div>
 
         </div>
+      <!-- ═══════════════════════════════════════════
+     CLINICMS FULL REPORT SUMMARY
+════════════════════════════════════════════ -->
+<section class="report-summary">
 
+  <!-- Summary Header -->
+  <div class="report-summary-header">
+    <h3 class="report-summary-title">&#128202; ClinicMS Report Summary</h3>
+    <p class="report-summary-sub">Auto-updated from all modules</p>
+  </div>
+
+  <!-- Row 1: Key Stats -->
+  <div class="summary-stats-row">
+
+    <div class="summary-stat-card summary-stat-card--blue">
+      <div class="summary-stat-icon">&#128100;</div>
+      <div class="summary-stat-info">
+        <span class="summary-stat-number" id="sumTotalPatients">0</span>
+        <span class="summary-stat-label">Total Patients</span>
+        <span class="summary-stat-sub" id="sumThisMonthPatients">This month: 0</span>
+      </div>
+    </div>
+
+    <div class="summary-stat-card summary-stat-card--green">
+      <div class="summary-stat-icon">&#128197;</div>
+      <div class="summary-stat-info">
+        <span class="summary-stat-number" id="sumTotalAppointments">0</span>
+        <span class="summary-stat-label">Total Appointments</span>
+        <span class="summary-stat-sub" id="sumThisMonthAppointments">This month: 0</span>
+      </div>
+    </div>
+
+    <div class="summary-stat-card summary-stat-card--orange">
+      <div class="summary-stat-icon">&#127973;</div>
+      <div class="summary-stat-info">
+        <span class="summary-stat-number" id="sumTotalAdmissions">0</span>
+        <span class="summary-stat-label">Total Admissions</span>
+        <span class="summary-stat-sub" id="sumThisMonthAdmissions">This month: 0</span>
+      </div>
+    </div>
+
+    <div class="summary-stat-card summary-stat-card--red">
+      <div class="summary-stat-icon">&#128300;</div>
+      <div class="summary-stat-info">
+        <span class="summary-stat-number" id="sumTotalDiagnoses">0</span>
+        <span class="summary-stat-label">Total Diagnoses</span>
+        <span class="summary-stat-sub" id="sumThisMonthDiagnoses">This month: 0</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Row 2: Finances + Top Diseases + Age Groups -->
+  <div class="summary-details-row">
+
+    <!-- Finances -->
+    <div class="summary-detail-card">
+      <div class="summary-detail-header">
+        <span>&#128176;</span> Financial Summary
+      </div>
+      <div class="summary-detail-body">
+        <div class="summary-detail-row">
+          <span class="summary-detail-label">Total Income</span>
+          <span class="summary-detail-value summary-detail-value--green"
+            id="sumIncome">UGX 0</span>
+        </div>
+        <div class="summary-detail-row">
+          <span class="summary-detail-label">Total Expenses</span>
+          <span class="summary-detail-value summary-detail-value--red"
+            id="sumExpenses">UGX 0</span>
+        </div>
+        <div class="summary-detail-row">
+          <span class="summary-detail-label">Pending Bills</span>
+          <span class="summary-detail-value summary-detail-value--orange"
+            id="sumPending">0 bills</span>
+        </div>
+        <div class="summary-detail-divider"></div>
+        <div class="summary-detail-row">
+          <span class="summary-detail-label">Net Balance</span>
+          <span class="summary-detail-value summary-detail-value--blue"
+            id="sumBalance">UGX 0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Diseases -->
+    <div class="summary-detail-card">
+      <div class="summary-detail-header">
+        <span>&#128300;</span> Top Diseases
+      </div>
+      <div class="summary-detail-body" id="sumTopDiseases">
+        <p class="summary-empty">No diagnosis records yet.</p>
+      </div>
+    </div>
+
+    <!-- Age Groups -->
+    <div class="summary-detail-card">
+      <div class="summary-detail-header">
+        <span>&#128101;</span> Most Affected Age Groups
+      </div>
+      <div class="summary-detail-body" id="sumAgeGroups">
+        <p class="summary-empty">No diagnosis records yet.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Row 3: Triage Summary -->
+  <div class="summary-triage-row">
+    <div class="summary-triage-card summary-triage-card--red">
+      <span class="summary-triage-icon">&#9888;</span>
+      <div class="summary-triage-info">
+        <span class="summary-triage-number" id="sumEmergency">0</span>
+        <span class="summary-triage-label">Emergency Cases</span>
+      </div>
+    </div>
+    <div class="summary-triage-card summary-triage-card--orange">
+      <span class="summary-triage-icon">&#9650;</span>
+      <div class="summary-triage-info">
+        <span class="summary-triage-number" id="sumUrgent">0</span>
+        <span class="summary-triage-label">Urgent Cases</span>
+      </div>
+    </div>
+    <div class="summary-triage-card summary-triage-card--green">
+      <span class="summary-triage-icon">&#10003;</span>
+      <div class="summary-triage-info">
+        <span class="summary-triage-number" id="sumNormal">0</span>
+        <span class="summary-triage-label">Normal Cases</span>
+      </div>
+    </div>
+    <div class="summary-triage-card summary-triage-card--purple">
+      <span class="summary-triage-icon">&#128138;</span>
+      <div class="summary-triage-info">
+        <span class="summary-triage-number" id="sumConsultations">0</span>
+        <span class="summary-triage-label">Consultations</span>
+      </div>
+    </div>
+    <div class="summary-triage-card summary-triage-card--blue">
+      <span class="summary-triage-icon">&#128137;</span>
+      <div class="summary-triage-info">
+        <span class="summary-triage-number" id="sumWardPatients">0</span>
+        <span class="summary-triage-label">Ward Patients</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="summary-footer">
+    <p>&#128197; Report generated on <span id="reportDate"></span></p>
+    <p>&#127973; ClinicMS &mdash; Nassejje Racheal Cavendish University Uganda 2026</p>
+  </div>
+
+</section>
       </main>
     </div>
 

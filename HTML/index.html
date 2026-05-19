@@ -6,128 +6,216 @@
   <title>ClinicMS – Login</title>
   <link rel="stylesheet" href="../CSS/general.css" />
 </head>
-<body class="login-page">
+<body class="app-page">
 
-  <!-- FULL WIDTH HEADER -->
-  <header class="login-header">
-    <div class="login-header-content">
-      <span class="login-header-icon">&#10084;</span>
-      <div>
-        <h1 class="login-header-brand">ClinicMS</h1>
-        <p class="login-header-sub">World-Class Clinic dashboard</p>
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <span class="sidebar-logo-icon">&#10084;</span>
+          <div class="sidebar-logo-text">
+            <span class="sidebar-brand">ClinicMS</span>
+            <span class="sidebar-brand-sub">World-class Clinic Dashboard</span>
+          </div>
+        </div>
       </div>
-    </div>
-    
-  </header>
 
-  <!-- BELOW HEADER: LEFT PANEL + FORM -->
-  <div class="login-wrapper">
+      <div class="sidebar-profile">
+        <div class="profile-avatar">&#128100;</div>
+        <div class="profile-info">
+          <span class="profile-name">System Administrator</span>
+          <span class="profile-role">Administrator</span>
+        </div>
+      </div>
 
-    <!-- Left Panel: Smaller -->
-    <div class="login-brand-panel">
-      <div class="brand-content">
-
-        <p class="brand-description">
-          A modern clinic management system designed to streamline
-          patient registration, appointments, triage, admissions,
-          and ward management — all in one place.
-        </p>
-
-        <ul class="brand-features">
-          <li>
-            <span class="feature-icon">&#128203;</span>
-            Patient Registration & Records
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="../HTML/dashboard.html" class="nav-link">
+              <span class="nav-icon">&#9783;</span>
+              <span class="nav-label">Dashboard</span>
+            </a>
           </li>
-          <li>
-            <span class="feature-icon">&#128197;</span>
-            Appointment Scheduling
+          <li class="nav-item">
+            <a href="../HTML/registration.html" class="nav-link">
+              <span class="nav-icon">&#128203;</span>
+              <span class="nav-label">Registration</span>
+            </a>
           </li>
-          <li>
-            <span class="feature-icon">&#10084;</span>
-            Triage & Consultation
+          <li class="nav-item">
+            <a href="../HTML/appointments.html" class="nav-link">
+              <span class="nav-icon">&#128197;</span>
+              <span class="nav-label">Appointments</span>
+            </a>
           </li>
-          <li>
-            <span class="feature-icon">&#127973;</span>
-            Admissions & Ward Management
+          <li class="nav-item">
+            <a href="../HTML/triage.html" class="nav-link">
+              <span class="nav-icon">&#10084;</span>
+              <span class="nav-label">Triage</span>
+            </a>
           </li>
-          <li>
-            <span class="feature-icon">&#128202;</span>
-            Reports & Analytics
+          <li class="nav-item">
+            <a href="../HTML/consultation.html" class="nav-link">
+              <span class="nav-icon">&#128138;</span>
+              <span class="nav-label">Consultation</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../HTML/admissions.html" class="nav-link">
+              <span class="nav-icon">&#127973;</span>
+              <span class="nav-label">Admissions</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../HTML/ward-patients.html" class="nav-link">
+              <span class="nav-icon">&#128137;</span>
+              <span class="nav-label">Ward Patients</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../HTML/diagnosis.html" class="nav-link">
+              <span class="nav-icon">&#128300;</span>
+              <span class="nav-label">Diagnosis</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../HTML/billing.html" class="nav-link">
+              <span class="nav-icon">&#128181;</span>
+              <span class="nav-label">Billing</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../HTML/reports.html" class="nav-link">
+              <span class="nav-icon">&#128202;</span>
+              <span class="nav-label">Reports</span>
+            </a>
           </li>
         </ul>
+      </nav>
 
+      <div class="sidebar-footer">
+        <a href="#" class="nav-link nav-link--logout">
+          <span class="nav-icon">&#8594;</span>
+          <span class="nav-label">Logout</span>
+        </a>
       </div>
-    </div>
+    </aside>
 
-    <!-- Right Panel: Login Form -->
-    <div class="login-form-panel">
-      <div class="login-form-wrapper">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
 
-        <div class="login-form-header">
-          <h2 class="login-title">Welcome Back</h2>
-          <p class="login-subtitle">Sign in to your ClinicMS account</p>
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h2 class="topbar-title">Welcome To ClinicMS</h2>
+          <p class="topbar-subtitle">A World-Class Clinic Dashboard</p>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-user">
+            &#128100; System Administrator &bull; Administrator
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Body -->
+      <main class="page-body">
+
+        <!-- Page Banner -->
+        <section class="page-banner">
+          <div class="banner-left">
+            <h3 class="banner-title">Please Login</h3>
+            <p class="banner-subtitle">Sign-in to Access the ClinicMS Dashboard
+            </p>
+          </div>
+        </section>
+
+        <!-- Login Form Card -->
+        <div class="login-center">
+          <div class="login-card">
+
+            <!-- Card Header -->
+            <div class="login-card-header">
+              <span class="login-card-icon">&#10084;</span>
+              <div>
+                <h2 class="login-card-title">Welcome Back</h2>
+                <p class="login-card-subtitle">
+                  Sign in to your ClinicMS account
+                </p>
+              </div>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="login-form">
+
+              <div class="form-group">
+                <label class="form-label" for="username">Username</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">&#128100;</span>
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    class="form-input"
+                    placeholder="Enter your username"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <div class="input-wrapper">
+                  <span class="input-icon">&#128274;</span>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-input"
+                    placeholder="Enter your password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="toggle-password"
+                    id="togglePassword">
+                    &#128065;
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-group form-group--inline">
+                <label class="checkbox-label">
+                  <input
+                    type="checkbox"
+                    id="rememberMe"
+                    class="checkbox-input"
+                  />
+                  Remember me
+                </label>
+                <a href="#" class="forgot-link">Forgot password?</a>
+              </div>
+
+              <div class="form-error" id="loginError"></div>
+
+              <button type="submit" class="btn btn--primary btn--full">
+                Sign In &#8594;
+              </button>
+
+            </form>
+
+          </div>
         </div>
 
-        <form class="login-form" id="loginForm" action="dashboard.html">
-
-          <div class="form-group">
-            <label for="username" class="form-label">Username</label>
-            <div class="input-wrapper">
-              <span class="input-icon">&#128100;</span>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                class="form-input"
-                placeholder="Enter your username"
-                required
-              />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="password" class="form-label">Password</label>
-            <div class="input-wrapper">
-              <span class="input-icon">&#128274;</span>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                class="form-input"
-                placeholder="Enter your password"
-                required
-              />
-              <button type="button" class="toggle-password" id="togglePassword">
-                &#128065;
-              </button>
-            </div>
-          </div>
-
-          <div class="form-group form-group--inline">
-            <label class="checkbox-label">
-              <input type="checkbox" id="rememberMe" class="checkbox-input" />
-              <span class="checkbox-custom"></span>
-              Remember me
-            </label>
-            <a href="#" class="forgot-link">Forgot password?</a>
-          </div>
-
-          <div class="form-error" id="loginError"></div>
-
-          <button type="submit" class="btn btn--primary btn--full" id="loginBtn">
-            Sign In &#8594;
-          </button>
-
-        </form>
-
-        <p class="login-footer-note">
-          Cavendish University Uganda &mdash; Front-End Development Project 2026
-        </p>
-
-      </div>
+      </main>
     </div>
 
   </div>
+  <p class="login-footer-note">
+              Nassejje Racheal &mdash; 237-415 &mdash;<br> 
+              Cavendish University Uganda 2026
+            </p>
 
   <script src="../JAVASCRIPT/main.js"></script>
 </body>
