@@ -1,4 +1,10 @@
-/* CSS VARIABLES */
+/* ═══════════════════════════════════════════════
+   CLINICMS - STYLESHEET
+   Author: Nassejje Racheal | 237-415
+   Cavendish University Uganda 2026
+════════════════════════════════════════════════ */
+
+/* ─── CSS VARIABLES ─────────────────────────── */
 :root {
   --sidebar-bg:       #1a3c5e;
   --sidebar-text:     #ffffff;
@@ -37,7 +43,7 @@
   --transition:       all 0.25s ease;
 }
 
-/* RESET */
+/* ─── RESET ──────────────────────────────────── */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -75,7 +81,7 @@ img {
   display: block;
 }
 
-/* SCROLLBAR  */
+/* ─── SCROLLBAR ───────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -87,18 +93,80 @@ img {
   border-radius: 10px;
 }
 
-/* LOGIN CARD (New Layout) */
-.login-center {
+/* ════════════════════════════════════════════════
+   LOGIN PAGE
+════════════════════════════════════════════════ */
+.login-page {
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--main-bg);
+}
+
+/* ── Full Width Header ── */
+.login-header {
+  width: 100%;
+  background: linear-gradient(90deg, #0f2744 0%, #2e86de 100%);
+  padding: 1.2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+}
+
+.login-header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.login-header-icon {
+  font-size: 2.2rem;
+  color: #ffffff;
+}
+
+.login-header-brand {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.login-header-sub {
+  font-size: 0.78rem;
+  color: #c8dff0;
+  margin-top: 0.2rem;
+}
+
+/* ── Wrapper below header ── */
+.login-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+/* ── Left Panel ── */
+.login-brand-panel {
+  width: 300px;
+  flex-shrink: 0;
+  background: #1a3c5e;
+  display: flex;
+  align-items: center;
   justify-content: center;
   align-items: center;
   padding: 2rem;
 }
 
-.login-card {
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+.feature-icon {
+  font-size: 1.1rem;
+  color: #2e86de;
+}
+
+/* ── Right Panel ── */
+.login-form-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 2.5rem;
   width: 100%;
   max-width: 500px;
@@ -279,7 +347,63 @@ img {
 .forgot-link:hover {
   text-decoration: underline;
 }
-/* APP LAYOUT (All pages except login) */
+
+.form-error {
+  color: var(--red);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  min-height: 1.2rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background: var(--accent-dark);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
+.btn--secondary {
+  background: #f0f4f8;
+  color: var(--text-mid);
+  border: 1.5px solid var(--border);
+}
+
+.btn--secondary:hover {
+  background: #e0e7ef;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+.login-footer-note {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-top: 2rem;
+}
+/* ════════════════════════════════════════════════
+   APP LAYOUT (All pages except login)
+════════════════════════════════════════════════ */
 .app-layout {
   display: flex;
   min-height: 100vh;
@@ -294,7 +418,9 @@ img {
   background: var(--main-bg);
 }
 
-/*  SIDEBAR */
+/* ════════════════════════════════════════════════
+   SIDEBAR
+════════════════════════════════════════════════ */
 .sidebar {
   width: var(--sidebar-width);
   background: var(--sidebar-bg);
@@ -529,7 +655,9 @@ img {
   border: 1.5px solid var(--border);
 }
 
-/*  PAGE BODY */
+/* ════════════════════════════════════════════════
+   PAGE BODY
+════════════════════════════════════════════════ */
 .page-body {
   padding: 1.5rem;
   flex: 1;
@@ -538,7 +666,9 @@ img {
   gap: 1.5rem;
 }
 
-/*  PAGE BANNER */
+/* ════════════════════════════════════════════════
+   PAGE BANNER
+════════════════════════════════════════════════ */
 .page-banner,
 .dashboard-banner {
   background: linear-gradient(135deg, var(--sidebar-bg) 0%, var(--accent) 100%);
@@ -608,7 +738,9 @@ img {
   color: #ffffff;
   border: 1px solid rgba(255,255,255,0.2);
 }
-/* DASHBOARD MODULES */
+/* ════════════════════════════════════════════════
+   DASHBOARD MODULES
+════════════════════════════════════════════════ */
 .modules-section {
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -800,8 +932,9 @@ img {
   border-top: 1px solid var(--border);
 }
 
-
-  /*  TABLE CARD */
+/* ════════════════════════════════════════════════
+   TABLE CARD
+════════════════════════════════════════════════ */
 .table-card {
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -930,8 +1063,9 @@ img {
   color: #ffffff;
 }
 
- 
-  /* WARD TABS */
+/* ════════════════════════════════════════════════
+   WARD TABS
+════════════════════════════════════════════════ */
 .ward-tabs {
   display: flex;
   gap: 0.5rem;
@@ -961,8 +1095,9 @@ img {
   border-color: var(--accent);
 }
 
- 
-  /* REPORTS - CHARTS */
+/* ════════════════════════════════════════════════
+   REPORTS - CHARTS
+════════════════════════════════════════════════ */
 .charts-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1014,8 +1149,9 @@ img {
   height: 260px;
 }
 
- 
-  /* RESPONSIVE DESIGN */
+/* ════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+════════════════════════════════════════════════ */
 
 /* Tablet */
 @media (max-width: 1024px) {
@@ -1121,256 +1257,4 @@ img {
   .btn {
     width: 100%;
   }
-}
-
- 
-  /* REPORT SUMMARY SECTION */
-.report-summary {
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  margin-top: 1.5rem;
-}
-
-.report-summary-header {
-  background: linear-gradient(135deg, var(--sidebar-bg) 0%, var(--accent) 100%);
-  padding: 1.2rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.report-summary-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.report-summary-sub {
-  font-size: 0.8rem;
-  color: #c8dff0;
-}
-
-/* Row 1 - Key Stats */
-.summary-stats-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.summary-stat-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.2rem 1.5rem;
-  border-right: 1px solid var(--border);
-  border-left: 4px solid transparent;
-  transition: var(--transition);
-}
-
-.summary-stat-card:last-child {
-  border-right: none;
-}
-
-.summary-stat-card:hover {
-  background: var(--accent-light);
-}
-
-.summary-stat-card--blue   { border-left-color: var(--accent); }
-.summary-stat-card--green  { border-left-color: var(--green); }
-.summary-stat-card--orange { border-left-color: var(--orange); }
-.summary-stat-card--red    { border-left-color: var(--red); }
-
-.summary-stat-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-}
-
-.summary-stat-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.summary-stat-number {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  line-height: 1;
-}
-
-.summary-stat-label {
-  font-size: 0.78rem;
-  color: var(--text-light);
-  margin-top: 0.2rem;
-}
-
-.summary-stat-sub {
-  font-size: 0.72rem;
-  color: var(--accent);
-  margin-top: 0.2rem;
-  font-weight: 600;
-}
-
-/* Row 2 - Details */
-.summary-details-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.summary-detail-card {
-  border-right: 1px solid var(--border);
-}
-
-.summary-detail-card:last-child {
-  border-right: none;
-}
-
-.summary-detail-header {
-  padding: 0.85rem 1.2rem;
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--sidebar-bg);
-  background: var(--accent-light);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.summary-detail-body {
-  padding: 1rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.summary-detail-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
-}
-
-.summary-detail-label {
-  color: var(--text-mid);
-}
-
-.summary-detail-value {
-  font-weight: 700;
-  font-size: 0.88rem;
-}
-
-.summary-detail-value--green  { color: var(--green); }
-.summary-detail-value--red    { color: var(--red); }
-.summary-detail-value--orange { color: var(--orange); }
-.summary-detail-value--blue   { color: var(--accent); }
-
-.summary-detail-divider {
-  height: 1px;
-  background: var(--border);
-  margin: 0.3rem 0;
-}
-
-.summary-empty {
-  font-size: 0.82rem;
-  color: var(--text-light);
-  font-style: italic;
-  text-align: center;
-  padding: 1rem 0;
-}
-
-/* Disease & Age list items */
-.summary-list-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.82rem;
-  padding: 0.3rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.summary-list-item:last-child {
-  border-bottom: none;
-}
-
-.summary-list-rank {
-  font-weight: 700;
-  color: var(--accent);
-  width: 20px;
-}
-
-.summary-list-name {
-  flex: 1;
-  color: var(--text-dark);
-  margin-left: 0.5rem;
-}
-
-.summary-list-count {
-  font-weight: 700;
-  color: var(--text-mid);
-  font-size: 0.8rem;
-}
-
-/* Row 3 - Triage Summary */
-.summary-triage-row {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.summary-triage-card {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.2rem;
-  border-right: 1px solid var(--border);
-  border-top: 3px solid transparent;
-}
-
-.summary-triage-card:last-child {
-  border-right: none;
-}
-
-.summary-triage-card--red    { border-top-color: var(--red); }
-.summary-triage-card--orange { border-top-color: var(--orange); }
-.summary-triage-card--green  { border-top-color: var(--green); }
-.summary-triage-card--purple { border-top-color: var(--purple); }
-.summary-triage-card--blue   { border-top-color: var(--accent); }
-
-.summary-triage-icon {
-  font-size: 1.5rem;
-}
-
-.summary-triage-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.summary-triage-number {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  line-height: 1;
-}
-
-.summary-triage-label {
-  font-size: 0.72rem;
-  color: var(--text-light);
-  margin-top: 0.2rem;
-}
-
-/* Footer */
-.summary-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.85rem 1.5rem;
-  background: var(--accent-light);
-  font-size: 0.78rem;
-  color: var(--text-light);
 }
